@@ -5,8 +5,8 @@ public class BestBowler
 	private int input1;
 	private String input2;
 	long x[] = new long[100];
-	long r=0,s,n;
-	int flag = 0,count = 0;
+	long r,s,n;
+	int flag,count = 0;
 
 	double []avg = new double[100];
 	
@@ -35,10 +35,13 @@ int bestBowler(){
 	 {
      	x[i] = Long.parseLong(value[i]);     	
      }
+	
 			for(int i=0;i<value.length;i++)
 			{
-				 n =  x[i];
-				        	
+					n =  x[i];
+				    s=0;
+				    r=0;
+				    flag= 0;
 				while(n!=0)
 				{
      			flag++;
@@ -48,6 +51,10 @@ int bestBowler(){
 				}
      		avg[i] = r/flag;	   
 			}
+			for(int i=0;i<value.length;i++)
+			 {
+		    	System.out.println("average = "+avg[i]);     	
+		    }
      for(int i=0;i<value.length;i++)
      {
      	if(avg[i]>=5)
